@@ -6,7 +6,13 @@
 <!--
 
 $(document).ready(function() {
-	$('#j_username').focus();
+	$('#identifier').focus();
+	$('#legacyLogin').hide();
+	$('#showLegacy').click(function(e) {
+		e.preventDefault();
+		$('#legacyLogin').show();
+		$('#showLegacy').hide();
+	});
 });
 
 //-->
@@ -19,10 +25,10 @@ $(document).ready(function() {
 			in. Please try again.</div>
 	</c:if>
 
-	<h1>Enter your email address to log in</h1>
 
 	<div class="row-fluid" id="oidcLogin">
 		<div class="span4 offset1 well">
+			<h3>Enter your email address to log in</h3>
 			<form action="<%=request.getContextPath()%>/openid_connect_login" method="POST">
 				<div>
 					<div class="input-prepend input-block-level">
@@ -37,11 +43,14 @@ $(document).ready(function() {
 		</div>
 	</div>
 
+	<div style="cursor: pointer;" class="pull-right" id="showLegacy">
+	    <i class="icon-chevron-right"></i> <small class="muted">local login...</small>
+	</div>
 
 	<div class="row-fluid" id="legacyLogin">
 		<div class="span4 offset1 well">
-			<form action="<%=request.getContextPath()%>/j_spring_security_check"
-				method="POST">
+		    <h3>Log in with a local account </h3>
+			<form action="<%=request.getContextPath()%>/j_spring_security_check" method="POST">
 				<div>
 					<div class="input-prepend input-block-level">
 						<span class="add-on"><i class="icon-user"></i></span>
@@ -63,14 +72,5 @@ $(document).ready(function() {
 
 
 </div>
-
-<script type="text/javascript">
-
-	$(document).ready(function() {
-		$('#legeacyLogin').hide();
-		
-	});
-
-</script>
 
 <o:footer/>
