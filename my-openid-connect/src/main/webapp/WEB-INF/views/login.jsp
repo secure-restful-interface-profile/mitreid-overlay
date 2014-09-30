@@ -7,12 +7,6 @@
 
 $(document).ready(function() {
 	$('#identifier').focus();
-	$('#legacyLogin').hide();
-	$('#showLegacy').click(function(e) {
-		e.preventDefault();
-		$('#legacyLogin').show();
-		$('#showLegacy').hide();
-	});
 });
 
 //-->
@@ -42,34 +36,6 @@ $(document).ready(function() {
 			</form>
 		</div>
 	</div>
-
-	<div style="cursor: pointer;" class="pull-right" id="showLegacy">
-	    <i class="icon-chevron-right"></i> <small class="muted">local login...</small>
-	</div>
-
-	<div class="row-fluid" id="legacyLogin">
-		<div class="span4 offset1 well">
-		    <h3>Log in with a local account </h3>
-			<form action="<%=request.getContextPath()%>/j_spring_security_check" method="POST">
-				<div>
-					<div class="input-prepend input-block-level">
-						<span class="add-on"><i class="icon-user"></i></span>
-						<input type="text" placeholder="Username" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" value="" id="j_username" name="j_username">
-					</div>
-				</div>
-				<div>
-					<div class="input-prepend input-block-level">
-						<span class="add-on"><i class="icon-lock"></i></span>
-						<input type="password" placeholder="Password" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" id="j_password" name="j_password">
-					</div>
-				</div>
-				<div>
-					<input type="submit" class="btn" value="Login" name="submit">
-				</div>
-			</form>
-		</div>
-	</div>
-
 
 </div>
 
