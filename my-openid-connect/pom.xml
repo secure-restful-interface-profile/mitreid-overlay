@@ -50,5 +50,10 @@
       	<artifactId>openid-connect-client</artifactId>
       	<version>${mitreid-version}</version>
       </dependency>
+      <dependency>
+      	<groupId>org.mitre</groupId>
+      	<artifactId>openid-connect-server</artifactId>
+      	<version>${mitreid-version}</version>
+      </dependency>
    </dependencies>
 </project>
