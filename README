@@ -1,3 +1,7 @@
+=== This Project is No Longer Maintained ===
+
+This project is not being maintained and its dependencies may contain security vulnerabilities.
+
 This is an example project showing how to set up a maven overlay for OpenID-Connect-Java-Server
 After cloning issue a 'git submodule update --init --recursive' command to set up the git submodules,
 then you should be able to run 'mvn package'
